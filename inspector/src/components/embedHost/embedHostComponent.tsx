@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HeaderComponent } from "../headerComponent";
-import Resizable from "re-resizable";
+import {Resizable} from "re-resizable";
 import { SceneExplorerComponent } from "../sceneExplorer/sceneExplorerComponent";
 import { ActionTabsComponent } from "../actionTabs/actionTabsComponent";
 import { Scene } from "babylonjs/scene";
@@ -115,7 +115,7 @@ export class EmbedHostComponent extends React.Component<IEmbedHostComponentProps
         }
 
         return (
-            <Resizable id="embed" minWidth={300} maxWidth={600} size={{ height: "100%" }} minHeight="100%" enable={{ top: false, right: false, bottom: false, left: true, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}>
+            <Resizable minWidth={300} maxWidth={600} size={{ height: "100%", width:"" }} minHeight="100%" enable={{ top: false, right: false, bottom: false, left: true, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}>
                 <HeaderComponent title="INSPECTOR" noClose={this.props.noClose} noExpand={this.props.noExpand} handleBack={true} onClose={() => this.props.onClose()} onPopup={() => this.props.onPopup()} onSelectionChangedObservable={this.props.globalState.onSelectionChangedObservable} />
                 {this.renderContent()}
             </Resizable>

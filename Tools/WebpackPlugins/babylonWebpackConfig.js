@@ -46,11 +46,7 @@ module.exports = function defaultConfig(options) {
         module: {
             rules: [{
                 test: /\.tsx?$/,
-                loader: 'awesome-typescript-loader',
-                options: {
-                    configFileName: settings.computed.tsConfigPath,
-                    declaration: false
-                }
+                loader: 'ts-loader',
             }, ...options.moduleRules]
         },
         mode: "production",
@@ -58,11 +54,11 @@ module.exports = function defaultConfig(options) {
             hints: false
         },
         plugins: [
-            new webpack.WatchIgnorePlugin([
+            new webpack.WatchIgnorePlugin({ paths:[
                 /\.js$/,
                 /\.d\.ts$/,
                 /\.fx$/
-            ]),
+            ]}),
             ...options.plugins
         ]
     }

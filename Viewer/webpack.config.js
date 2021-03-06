@@ -33,9 +33,9 @@ module.exports =
         mode: "development",
         devtool: 'source-map',
         plugins: [
-            new webpack.WatchIgnorePlugin([
+            new webpack.WatchIgnorePlugin({ paths:[
                 /\.d\.ts$/
-            ])
+            ]})
         ],
         module: {
             rules: [{

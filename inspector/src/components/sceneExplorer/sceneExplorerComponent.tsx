@@ -7,7 +7,7 @@ import { Scene } from "babylonjs/scene";
 import { EngineStore } from "babylonjs/Engines/engineStore";
 
 import { TreeItemComponent } from "./treeItemComponent";
-import Resizable from "re-resizable";
+import {Resizable} from "re-resizable";
 import { HeaderComponent } from "../headerComponent";
 import { SceneTreeItemComponent } from "./entities/sceneTreeItemComponent";
 import { Tools } from "../../tools";
@@ -501,7 +501,7 @@ export class SceneExplorerComponent extends React.Component<ISceneExplorerCompon
         }
 
         return (
-            <Resizable tabIndex={-1} id="sceneExplorer" ref={this.sceneExplorerRef} size={{ height: "100%" }} minWidth={300} maxWidth={600} minHeight="100%" enable={{ top: false, right: true, bottom: false, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }} onKeyDown={(keyEvent) => this.processKeys(keyEvent)}>
+            <Resizable ref={this.sceneExplorerRef} size={{ height: "100%", width:"" }} minWidth={300} maxWidth={600} minHeight="100%" enable={{ top: false, right: true, bottom: false, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }} >
                 {
                     !this.props.noHeader &&
                     <HeaderComponent title="SCENE EXPLORER" noClose={this.props.noClose} noExpand={this.props.noExpand} noCommands={this.props.noCommands} onClose={() => this.onClose()} onPopup={() => this.onPopup()} />

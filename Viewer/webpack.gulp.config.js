@@ -47,7 +47,7 @@ module.exports = {
         },
         {
             test: /\.(woff|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: 'base64-inline-loader?limit=1000&name=[name].[ext]'
+            use: 'base64-inline-loader?limit=1000&name=[name].[ext]'
         }]
     }
 }

@@ -233,4 +233,4 @@ gulp.task("core-workers", buildExternalLibraries(config["core"], true));
 /**
  * Build all libs.
  */
-gulp.task("typescript-libraries", gulp.series(config.modules, config.viewerModules));
+gulp.task("typescript-libraries", gulp.series(config.modules));

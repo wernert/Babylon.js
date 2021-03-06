@@ -7,7 +7,7 @@ import { TabsComponent } from "./tabsComponent";
 import { faFileAlt, faWrench, faBug, faChartBar, faCog } from '@fortawesome/free-solid-svg-icons';
 import { StatisticsTabComponent } from "./tabs/statisticsTabComponent";
 import { DebugTabComponent } from "./tabs/debugTabComponent";
-import Resizable from "re-resizable";
+import {Resizable} from "re-resizable";
 import { PropertyGridTabComponent } from "./tabs/propertyGridTabComponent";
 import { HeaderComponent } from "../headerComponent";
 import { ToolsTabComponent } from "./tabs/toolsTabComponent";
@@ -144,7 +144,7 @@ export class ActionTabsComponent extends React.Component<IActionTabsComponentPro
         }
 
         return (
-            <Resizable id="actionTabs" minWidth={300} maxWidth={600} size={{ height: "100%" }} minHeight="100%" enable={{ top: false, right: false, bottom: false, left: true, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}>
+            <Resizable minWidth={300} maxWidth={600} size={{ height: "100%", width:"" }} minHeight="100%" enable={{ top: false, right: false, bottom: false, left: true, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}>
                 {
                     !this.props.noHeader &&
                     <HeaderComponent title="INSPECTOR" handleBack={true} noClose={this.props.noClose} noExpand={this.props.noExpand} noCommands={this.props.noCommands} onClose={() => this.onClose()} onPopup={() => this.onPopup()} onSelectionChangedObservable={this.props.globalState ? this.props.globalState.onSelectionChangedObservable : undefined} />
